@@ -3,23 +3,20 @@
         <!-- Pollutant Dropdown -->
         <div class="form-group">
             <label for="pollutant">Pollutant:</label>
-            <select id="pollutant" name="pollutant" class="form-control">
-                <option value="ozone">Ozone</option>
-                <option value="pm25">PM 2.5</option>
-                <option value="pm10">PM 10</option>
-                <option value="no2">Nitrogen Dioxide (NO2)</option>
-                <option value="so2">Sulfur Dioxide (SO2)</option>
+            <select id="pollutant" name="pollutant">
+                {% for pollutant in pollutants %}
+                <option value="{{ pollutant.value }}">{{ pollutant.value }}</option>
+                {% endfor %}
             </select>
         </div>
 
         <!-- County Dropdown -->
         <div class="form-group">
             <label for="county">County:</label>
-            <select id="county" name="county" class="form-control">
-                <option value="county1">County 1</option>
-                <option value="county2">County 2</option>
-                <option value="county3">County 3</option>
-                <option value="county4">County 4</option>
+            <select id="county" name="county">
+                {% for county in countys %}
+                <option value="{{ county.value }}">{{ county.value }}</option>
+                {% endfor %}
             </select>
         </div>
 
